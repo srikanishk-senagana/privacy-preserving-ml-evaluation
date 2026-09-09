@@ -9,7 +9,7 @@ It compares non-private baseline models with differentially private models train
 * Opacus (PyTorch)
 * TensorFlow Privacy
 
-The system also evaluates privacy risks using Membership Inference Attacks (MIA), providing a practical framework for assessing real-world privacy leakage in ML systems.
+The system also evaluates privacy risks using Membership Inference Attacks (MIA), providing a practical framework for assessing privacy leakage in ML systems.
 
 ---
 
@@ -18,11 +18,9 @@ The system also evaluates privacy risks using Membership Inference Attacks (MIA)
 * End-to-end ML pipeline (data preprocessing → training → evaluation)
 * Differential Privacy training with multiple privacy budgets (ε = 1, 2, 5, 10)
 * Membership Inference Attacks:
-
   * Threshold-based attack
   * Shadow model attack
 * Comparison across:
-
   * Baseline (non-private)
   * Opacus DP models
   * TensorFlow Privacy models
@@ -55,6 +53,17 @@ The system also evaluates privacy risks using Membership Inference Attacks (MIA)
 * Increasing privacy (lower ε) reduces membership inference attack success
 * Stronger privacy guarantees may impact model performance
 * Provides a comparative analysis between Opacus and TensorFlow Privacy
+* The experiments show how privacy settings can affect both model utility and privacy-risk evaluation
+
+---
+
+## Limitations
+
+* The evaluation is performed on the UCI Adult dataset and a single MLP architecture.
+* Results depend on the selected training configuration and privacy settings.
+* The implemented Membership Inference Attacks represent relatively simple attack scenarios.
+* The results should be interpreted within the scope of this experiment rather than as a general benchmark of Differential Privacy.
+* Privacy and utility results may vary across datasets, model architectures, training configurations, and attack methodologies.
 
 ---
 
