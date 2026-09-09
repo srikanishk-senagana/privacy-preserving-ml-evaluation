@@ -75,9 +75,11 @@ def run_shadow_attack(model_filename):
     real_scores = model.predict(X_all, batch_size=BATCH_SIZE).flatten().reshape(-1,1)
 
     # 4) Evaluate attacker
-    preds = attacker.predict(real_scores)
-    acc   = accuracy_score(true_labels, preds)
-    auc   = roc_auc_score(true_labels, real_scores)
+   preds = attacker.predict(real_scores)
+    attack_probs = attacker.predict_proba(real_scores)[:, 1]
+    
+    acc = accuracy_score(real_labels, preds)
+    auc = roc_auc_score(real_labels, attack_probs)
 
     print(f"Shadow TF on {model_filename} → Acc: {acc:.3f}, AUC: {auc:.3f}")
     os.makedirs(RESULT_DIR, exist_ok=True)
