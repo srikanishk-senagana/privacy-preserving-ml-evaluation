@@ -99,6 +99,11 @@ Interpret plots alongside the CSV summaries and the limitations above. In partic
 - The results are configuration-specific and do not establish generalisation across datasets, architectures, random seeds, or attack methods.
 - The experiments should not be interpreted as a comprehensive benchmark of differential privacy implementations.
 
+## Research Reflection
+
+See [What I Learned](WHAT_I_LEARNED.md) for key findings,
+lessons from the experiments, and limitations of the evaluation.
+
 ## Tech Stack
 
 - Python
